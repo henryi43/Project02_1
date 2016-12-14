@@ -1,0 +1,42 @@
+<html>
+<head>
+    <title>Add New Game Stats</title>
+</head>
+<body>
+<h1>Add New Game Stats</h1>
+<form action="/hanzo/insert" method="get">
+    Game ID
+    <select id="game_id" name="game_id">
+        <% for(var i=0; game.length > i; i++ ) { %>
+        <option value="<%= game[i].game_id %>"><%= game[i].game_id %></option>
+        <% } %>
+    </select>
+    <br />
+    <br />
+    Eliminations: <input id="eliminations" name="eliminations" type="text" />
+    <br />
+    <br />
+    Damage Done: <input id="damage_done" name="damage_done" type="text" />
+    <br />
+    <br />
+    Objective Kills: <input id="objective_kills" name="objective_kills" type="text" />
+    <br />
+    <br />
+    Objective Time: <input id="objective_time" name="objective_time" type="text" />
+    <br />
+    <br />
+    Win/Lose
+    <select name="win_or_lose" name="win_or_lose">
+        <option value="win">Win</option>
+        <option value="lose">Lose</option>
+    </select>
+    <br />
+    <br />
+    Deaths: <input id="deaths" name="deaths" type="text" />
+
+    <input type="submit" />
+
+</form>
+</body>
+
+</html>

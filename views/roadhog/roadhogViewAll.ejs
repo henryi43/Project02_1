@@ -1,0 +1,36 @@
+<html>
+<head>
+    <title>Roadhog Stats</title>
+</head>
+<body>
+<h1>Roadhog Stats</h1>
+
+<a href="/roadhog/add">Add New Game Stats</a> <br />
+<br />
+
+<table border="1">
+    <tr><th>Map Name</th><th>Game Type</th><th>Eliminations</th><th>Damage Done</th><th>Objective Kills</th><th>Objective Time</th><th>Win/Lose</th><th>Healing Done</th><th>Deaths</th><th>Actions</th></tr>
+    <% for(var i=0; result.length > i; i++ ) { %>
+    <tr>
+        <td><a href="/roadhog/?game_id=<%= result[i].game_id %>"><%= result[i].map_name %></a></td>
+        <td><%= result[i].attack_defense %></td>
+        <td><%= result[i].eliminations %></td>
+        <td><%= result[i].damage_done %></td>
+        <td><%= result[i].objective_kills %></td>
+        <td><%= result[i].objective_time %></td>
+        <td><%= result[i].win_or_lose %></td>
+        <td><%= result[i].healing_done %></td>
+        <td><%= result[i].deaths %></td>
+        <td>
+
+            <form action="/roadhog/delete/" style="display:inline;">
+                <input type="hidden" name="game_id" id="game_id" value="<%= result[i].game_id %>" />
+                <input type="submit" value="Delete"/>
+            </form>
+        </td>
+    </tr>
+    <% } %>
+</table>
+</body>
+
+</html>

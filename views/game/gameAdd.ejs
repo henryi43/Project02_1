@@ -1,0 +1,39 @@
+<html>
+<head>
+    <title>Add New Game</title>
+</head>
+<body>
+<h1>Add New game</h1>
+<form action="/game/insert" method="get">
+
+    Map Name
+    <select id="map_name" name="map_name">
+        <option value="Dorado">Dorado</option>
+        <option value="Numbani">Numbani</option>
+        <option value="Hollywood">Hollywood</option>
+        <option value="Nepal">Nepal</option>
+        <option value="Hanamura">Hanamura</option>
+        <option value="Route 66">Route 66</option>
+        <option value="Eichenwalde">Eichenwalde</option>
+        <option value="Ilios">Ilios</option>
+        <option value="Kings Row">Kings Row</option>
+        <option value="Lijiang Tower">Lijiang Tower</option>
+    </select>
+    <br /><br />
+    Attack or Defense
+    <select id="attack_defense" name="attack_defense">
+        <option value="attack">Attack</option>
+        <option value="defense">Defense</option>
+    </select>
+    <br /><br />
+    Account ID
+    <select id="account_id" name="account_id">
+        <% for(var j=0; account.length > j; j++ ) { %>
+        <option value="<%= account[j].account_id %>"><%= account[j].account_id%></option>
+        <% } %>
+    <input type="submit" />
+
+</form>
+</body>
+
+</html>

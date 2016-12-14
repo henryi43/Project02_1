@@ -1,0 +1,3 @@
+create or replace view lucio_view as
+select l.*, g.map_name, g.attack_defense from Lucio l
+join Game g on g.game_id = l.game_id;

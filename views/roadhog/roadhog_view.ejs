@@ -1,0 +1,3 @@
+create or replace view roadhog_view as
+select r.*, g.map_name, g.attack_defense from Roadhog r
+join Game g on g.game_id = r.game_id;

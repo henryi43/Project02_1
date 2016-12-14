@@ -1,0 +1,3 @@
+create or replace view game_view as
+select g.*, a.account_name, a.level from Game g
+join account a on a.account_id = g.account_id;

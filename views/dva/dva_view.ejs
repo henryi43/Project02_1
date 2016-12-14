@@ -1,0 +1,3 @@
+create or replace view dva_view as
+select d.*, g.map_name, g.attack_defense from DVA d
+join Game g on g.game_id = d.game_id;

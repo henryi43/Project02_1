@@ -1,0 +1,25 @@
+<html>
+<head>
+    <title>Games</title>
+</head>
+<body>
+<h1>Games</h1>
+<br />
+<a href="/game/add">Add New Game</a> <br /><br />
+<table border="1">
+    <tr><th>Map Name</th><th>Game Type</th><th>Action</th></tr>
+    <% for(var i=0; result.length > i; i++ ) { %>
+    <tr>
+        <td><a href="/game/?game_name="><%= result[i].map_name %></a></td>
+        <td><%= result[i].attack_defense %>
+        <td><form action="/game/delete/">
+                <input type="hidden" name="game_id" id="game_id" value="<%= result[i].game_id %>" />
+                <input type="submit" value="Delete"/>
+            </form>
+        </td>
+    </tr>
+    <% } %>
+</table>
+</body>
+
+</html>

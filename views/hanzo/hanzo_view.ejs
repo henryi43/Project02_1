@@ -1,0 +1,3 @@
+create or replace view hanzo_view as
+select h.*, g.map_name, g.attack_defense from Hanzo h
+join Game g on g.game_id = h.game_id;
